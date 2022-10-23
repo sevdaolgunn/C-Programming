@@ -23,15 +23,19 @@ int main(){
 
     node * temp;
     temp = head;
-    printf("1. eleman: %d\n",temp ->x );
-    temp = temp -> next;
-    printf("2. eleman: %d\n",temp ->x );
-    temp = temp -> next;
-    printf("3. eleman: %d\n",temp ->x );
+    //printf("1. eleman: %d\n",temp ->x );
+    //temp = temp -> next;
+    //printf("2. eleman: %d\n",temp ->x );
+    //temp = temp -> next;
+    //printf("3. eleman: %d\n",temp ->x );
+    int i=0;
+    while (temp!=NULL)
+    {
+        i++;
+        printf("%d.eleman : %d\n", i, temp->x);
+        temp = temp ->next;
+    }
+    
 
-
-
-
-   
 
 }
