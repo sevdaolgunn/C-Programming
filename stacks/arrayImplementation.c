@@ -57,7 +57,7 @@ int main(){
         switch (ch)
         {
         case 1:
-            initialize(stk);
+            reset(stk);
             break;
         case 2:
             printf("Number :");
