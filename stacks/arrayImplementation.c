@@ -5,7 +5,7 @@
 
 typedef struct{
     int data[STACK_SIZE];
-    int *top;
+    int top;
 }stack;
 
 void reset(stack *stk) {
@@ -39,6 +39,7 @@ int pop(stack *stk){
 
         int x = stk->data[stk->top];
         stk->top --;
+        
         return x; //return stk->data[stk->top--]
 
     }
