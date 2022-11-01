@@ -31,12 +31,11 @@ int main()
     }
         
 
-    for(i=1; i<=5;i++){
+    for(i=1; i<=5; i++){
         temp->next = (node*)malloc(sizeof(node));
         temp = temp->next;
         temp->data = i*10;
         printf("%d.inci eleman : %d\n",i,temp->data );
-
         temp->next = NULL;
 
     }
