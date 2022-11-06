@@ -109,6 +109,7 @@ int main(){
     int num;
 
     queue *q;
+    
 
     
 
@@ -134,7 +135,7 @@ int main(){
         case 4: 
             printQueue(q);
             break;
-            
+
         default: 
             printf("wrong choice!!!");
             break;          
