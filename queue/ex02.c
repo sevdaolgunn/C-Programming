@@ -133,7 +133,11 @@ int main(){
 
         case 4: 
             printQueue(q);
-                break;
+            break;
+            
+        default: 
+            printf("wrong choice!!!");
+            break;          
 
         
         }
