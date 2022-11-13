@@ -54,6 +54,35 @@ void printPostorder(BTREE *root){
     }
 }
 
+int size(BTREE *root){
+    if(root!=NULL)
+       return (size(root->left) + 1 + size(root->right));
+
+    else
+       return 0;   
+}
+
+int maxDepth(BTREE *root){
+
+    int LDepth;
+    int RDepth;
+
+    if(root == NULL) 
+       return 0;
+
+    else{
+        //compute the depth of each subtree
+        LDepth = maxDepth(root->left);
+        RDepth = maxDepth(root->right);
+
+         if(LDepth > RDepth)
+            return (LDepth + 1);
+        else
+            return (RDepth + 1);    
+    }   
+
+}
+
 int main(){
 
     BTREE *myRoot = NULL;
@@ -76,6 +105,13 @@ int main(){
 
     printf("\nPOSTORDER:");
     printPostorder(myRoot);
+
+    printf("\nthe size of binary tree:%d", size(myRoot));
+    
+
+    printf("\nthe depth of binary tree: %d",maxDepth(myRoot));
+    
+
 
 
 
