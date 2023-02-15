@@ -31,6 +31,50 @@ BTREE *insertData(BTREE *root, int data){
     return root;  
 }
 
+BTREE *deleteNode(BTREE *root, int x){
+    BTREE *q, *p;
+    if(root == NULL){//no tree
+       return NULL;
+    } 
+    if(root->data == x){
+        if(root->left == root->right){
+            free(root);
+            return NULL;
+        }
+    } 
+    else{
+        if(root->left == NULL){
+            p = root->right;
+            free(root);
+            return p;
+        }
+        else if(root->right == NULL){
+            p = root->left;
+            free(root);
+            return p;
+        }
+        else{
+            p = q = root->right;
+            while(p->left!=NULL){
+                p=p->left;
+
+            p->left = root->left;
+            free(root);
+            return q;  
+          }  
+        }
+    }  
+
+    if(root->data < x){
+        root->right = deleteNode(root->right, x);
+    }  
+
+    else{
+        root->left = deleteNode(root->right, x);
+    }
+    return root;
+}
+
 void printInorder(BTREE *root){
     if(root!=NULL){
         printInorder(root->left);
@@ -110,6 +154,30 @@ int main(){
     
 
     printf("\nthe depth of binary tree: %d",maxDepth(myRoot));
+
+    int delete_node;
+
+    printf("\n number for delete: \n ");
+    scanf("%d",&delete_node);
+    deleteNode(myRoot,delete_node);
+
+    printf("\nINORDER:");
+    printInorder(myRoot);
+
+    printf("\nPREORDER:");
+    printPreorder(myRoot);
+
+    printf("\nPOSTORDER:");
+    printPostorder(myRoot);
+
+    printf("\nthe size of binary tree:%d", size(myRoot));
+    
+
+    printf("\nthe depth of binary tree: %d",maxDepth(myRoot));
+
+
+
+    
     
 
 

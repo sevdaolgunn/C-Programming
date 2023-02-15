@@ -73,9 +73,10 @@ int main(){
             num = pop(stk);
             printf("Element at top of the stack :%d\n", num);
             break;
-        
+
+         
         } 
 
-    }
+    
 }
 
